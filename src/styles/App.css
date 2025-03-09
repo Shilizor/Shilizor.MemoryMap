@@ -1,0 +1,67 @@
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Занимает оставшуюся ширину */
+    height: calc(100vh - 100px); /* Высота контейнера карты */
+  }
+  
+  .map {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
+
+
+  .grid-container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    gap: 10px; /* Расстояние между элементами */
+    max-height: calc(100vh - 100px); /* Ограничение высоты контейнера */
+    overflow-y: auto; /* Вертикальный скролл */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .grid-item {
+    position: relative;
+    background-color: #25293C;
+    background-size:contain; /* Фоновое изображение покрывает весь блок */
+    background-repeat: no-repeat;
+    background-position:top; /* Фоновое изображение центрируется */
+    color: #d9d9d9;
+    text-align: center;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+    height: 330px;
+    padding: 10px;
+
+    &&:hover{
+      color: #2198FF;
+      cursor: pointer;
+    }
+  }
+
+  .grid-item::before {
+    content: ''; /* Обязательное свойство для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование относительно .grid-item */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    z-index: 1; /* Размещаем псевдоэлемент поверх фонового изображения */
+  }
+
+  .grid-item-text {
+    position: relative; /* Размещаем контент поверх затемнения */
+    z-index: 2; /* Выше псевдоэлемента */
+    font-weight: bold; /* Жирный текст */
+    display: flex; /* Используем Flexbox для выравнивания текста */
+    justify-content: start; /* Горизонтальное выравнивание текста */
+    font-size: 20px;
+    text-align: start;
+    width: 40%;
+  }
