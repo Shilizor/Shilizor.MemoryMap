@@ -1,0 +1,58 @@
+/* src/App.css */
+.search-bar {
+    position: relative;
+    width: 350px;
+    border: none;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: solid 1px #303345;
+    outline: none;
+    border-radius: 10px;
+    background-color: #1C2033;
+
+    &&::placeholder{
+      color: #d9d9d9;
+      font-size: 20px;
+    }
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 2%;
+    width: 320px;
+    border-radius: 0 0 10px 10px;
+    background-color: #1C2033;
+    border: solid 3px #303345;
+    border-top: none;
+    z-index: 10;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .dropdown li {
+    background-color: #d9d9d9;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown small {
+    color: #666;
+    font-size: 12px;
+  }

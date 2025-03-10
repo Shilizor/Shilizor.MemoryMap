@@ -1,6 +1,7 @@
 import '../styles/Header.css'
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import SearchBar from './SearchBar'
 
 const Header = () => {
 
@@ -22,18 +23,18 @@ const Header = () => {
           <nav>
             <ul className="nav-items">
               <li className={isInteractiveMapActive ? 'nav-item active' : 'nav-item'} onClick={() => handleNavigation('interactiveMap')}>
-                <img src="" alt="" className="nav-img" />
+                <img src='../Icons/map.svg' alt="" className="nav-img" />
                 <p>Интерактивная карта</p>
               </li>
               <li className={isMonumentListActive ? 'nav-item active' : 'nav-item'} onClick={() => handleNavigation('monumentList')}>
-                <img src="" alt="" className="nav-img" />
+                <img src='../Icons/Menu.svg' alt="" className="nav-img" />
                 <p>Список монументов</p>
               </li>
             </ul>
           </nav>
         </div>
         <div className="rightside">
-          <input className="search" type="search" placeholder='Поиск...'/>
+          <SearchBar />
         </div>
       </header>
     </>

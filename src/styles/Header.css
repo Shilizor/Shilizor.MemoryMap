@@ -1,5 +1,5 @@
 header {
-    height: 100px;
+    height: 60px;
     background-color: #25293C;
     display: flex;
     flex-direction: row;
@@ -31,6 +31,16 @@ header {
             justify-content: center;
             align-items: center;
 
+            .nav-img{
+                width: 30px;
+                height: 30px;
+                filter: invert(100%) sepia(1%) saturate(3256%) hue-rotate(186deg) brightness(112%) contrast(70%);
+                &&:hover{
+                    filter: invert(48%) sepia(46%) saturate(3934%) hue-rotate(190deg) brightness(104%) contrast(101%);
+                    cursor: pointer;
+                }
+            }
+
             .nav-item {
                 display: flex;
                 justify-content: center;
@@ -39,11 +49,19 @@ header {
                 &&:hover{
                     color: #2198FF;
                     cursor: pointer;
+
+                    .nav-img{
+                        filter: invert(48%) sepia(46%) saturate(3934%) hue-rotate(190deg) brightness(104%) contrast(101%);
+                    }
                 }
             }
 
             .active {
                 color: #2198FF;
+
+                .nav-img{
+                    filter: invert(48%) sepia(46%) saturate(3934%) hue-rotate(190deg) brightness(104%) contrast(101%);
+                }
             }
         }
     }

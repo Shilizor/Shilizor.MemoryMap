@@ -12,7 +12,6 @@ const App = () => {
       <Header />
       <main>
       <Routes>
-          {/* / и /interactive-map отображают InteractiveMapPage */}
           <Route path="/" element={<InteractiveMapPage />} />
           <Route path="/interactiveMap" element={<InteractiveMapPage />} />
           <Route path="/monumentList" element={<MonumentListPage />} />

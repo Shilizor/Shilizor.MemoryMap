@@ -19,7 +19,7 @@
     width: 100vw;
     grid-template-columns: repeat(2, 1fr); /* Два столбца */
     gap: 10px; /* Расстояние между элементами */
-    max-height: calc(100vh - 100px); /* Ограничение высоты контейнера */
+    max-height: calc(100vh - 60px); /* Ограничение высоты контейнера */
     overflow-y: auto; /* Вертикальный скролл */
     padding: 10px;
     box-sizing: border-box;
@@ -30,7 +30,7 @@
     background-color: #25293C;
     background-size:contain; /* Фоновое изображение покрывает весь блок */
     background-repeat: no-repeat;
-    background-position:top; /* Фоновое изображение центрируется */
+    background-position:center; /* Фоновое изображение центрируется */
     color: #d9d9d9;
     text-align: center;
     border-radius: 5px;
@@ -44,15 +44,15 @@
     }
   }
 
-  .grid-item::before {
+  .grid-item::after {
     content: ''; /* Обязательное свойство для псевдоэлемента */
     position: absolute; /* Абсолютное позиционирование относительно .grid-item */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
-    z-index: 1; /* Размещаем псевдоэлемент поверх фонового изображения */
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный черный цвет */
+    z-index: 0; /* Размещаем псевдоэлемент поверх фонового изображения */
   }
 
   .grid-item-text {
@@ -64,4 +64,21 @@
     font-size: 20px;
     text-align: start;
     width: 40%;
+  }
+
+  .grid-item-btn {
+    position: absolute; /* Размещаем контент поверх затемнения */
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    z-index: 2; /* Выше псевдоэлемента */
+
+    &&:hover {
+      background-color: #2198FF;
+      cursor: pointer;
+    }
   }

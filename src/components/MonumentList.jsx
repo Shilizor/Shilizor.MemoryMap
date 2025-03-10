@@ -10,25 +10,22 @@ const MonumentList = () => {
     navigate(`/interactiveMap/${monument.id}`);
   };
 
+  const testcmd = (monument) => (event) => {
+    event.stopPropagation(); // Останавливаем всплытие события
+    alert(`${monument.description}`)
+  };
+
   return (
-    <div class="grid-container">
+    <div className="grid-container">
 
       {Monuments.map((monument) => (
           <div key={monument.id} onClick={() => handleMonumentClick(monument)} className='grid-item' style={{ backgroundImage: `url(${monument.media[0].src})` }}>
             <div className="grid-item-text">
               {monument.title}
             </div>
+            <button className="grid-item-btn" onClick={testcmd(monument)}>Описание</button>
           </div>
         ))}
-
-      {/* <h2>Список монументов</h2>
-      <ul>
-        {Monuments.map((monument) => (
-          <li key={monument.id} onClick={() => handleMonumentClick(monument)} className='monumentlist-item'>
-            {monument.title}
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 };
